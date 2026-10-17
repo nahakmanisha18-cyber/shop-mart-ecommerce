@@ -1,0 +1,1142 @@
+
+/* =========================================
+   FOR YOU CATEGORY SECTION
+========================================= */
+
+.foryou-category-section {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+
+}
+.foryou-category-items {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 12px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.foryou-category-items::-webkit-scrollbar {
+    display: none;
+}
+
+.foryou-category-link {
+    min-width: 75px;
+
+    flex: 0 0 75px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #011f53;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.foryou-category-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f6f9;
+    color: #011f53;
+
+    font-size: 22px;
+
+    transition: all 0.3s ease;
+}
+
+.foryou-category-link span {
+    margin-top: 8px;
+    color: #011f53;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
+}
+
+.foryou-category-link:hover .foryou-category-icon {
+
+    background: #fb4802;
+    color: #ffffff;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(40, 116, 240, 0.20);
+}
+
+.foryou-category-link:hover span {
+    color: #fb4802;
+}
+
+
+/* =========================================
+   ACTIVE CATEGORY
+========================================= */
+
+.foryou-category-link.active {
+    color: #fb4802;
+}
+
+.foryou-category-link.active .foryou-category-icon {
+    background: #fb4802;
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 12px rgba(251, 72, 2, 0.20);
+}
+
+.foryou-category-link.active span {
+    color: #fb4802;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .foryou-category-header {
+        padding: 15px 16px 7px;
+    }
+
+    .foryou-category-header h2 {
+        font-size: 20px;
+    }
+
+    .foryou-category-items {
+        gap: 22px;
+
+        padding: 10px 16px 14px;
+    }
+
+    .foryou-category-link {
+        min-width: 68px;
+
+        flex: 0 0 68px;
+    }
+
+    .foryou-category-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 20px;
+    }
+
+    .foryou-category-link span {
+        font-size: 12px;
+
+        margin-top: 7px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .foryou-category-section {
+        margin-bottom: 18px;
+    }
+
+    .foryou-category-header {
+        padding: 13px 12px 6px;
+    }
+
+    .foryou-category-header h2 {
+        font-size: 18px;
+    }
+
+    .foryou-category-header p {
+        font-size: 12px;
+    }
+
+    .foryou-category-items {
+        gap: 18px;
+
+        padding: 9px 12px 13px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+
+        -ms-overflow-style: none;
+    }
+
+    .foryou-category-items::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .foryou-category-link {
+        min-width: 62px;
+
+        flex: 0 0 62px;
+    }
+
+    .foryou-category-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .foryou-category-link span {
+        margin-top: 6px;
+
+        font-size: 11px;
+    }
+}
+
+
+.foryou-page {
+    width: 100%;
+    min-height: calc(100vh - 210px);
+    background: #f5f6f8;
+    padding: 20px 28px 50px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HERO SLIDER
+========================================= */
+
+.foryou-slider {
+    width: 100%;
+    max-width: 1500px;
+    height: 320px;
+
+    margin: 0 auto 30px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #fff;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Slider Image */
+
+.foryou-slider-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   SLIDER OVERLAY
+========================================= */
+/* =========================================
+   THREE CARD BANNER SLIDER
+========================================= */
+
+.foryou-banner-slider {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BANNER TRACK
+========================================= */
+
+.foryou-banner-track {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.7fr 1.5fr 0.7fr;
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   BANNER CARD
+========================================= */
+
+.foryou-banner-card {
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #f5f5f5;
+}
+
+
+/* Image */
+
+.foryou-banner-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   SIDE CARDS
+========================================= */
+
+.foryou-banner-card.side-card {
+    opacity: 1;
+}
+
+
+/* =========================================
+   CENTER CARD
+========================================= */
+
+.foryou-banner-card.main-card {
+    transform: scale(1);
+
+    z-index: 2;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.foryou-banner-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #011f53;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.2s ease;
+}
+
+
+.foryou-banner-arrow:hover {
+    background: #fb4802;
+
+    color: white;
+
+    transform:
+        translateY(-50%) scale(1.05);
+}
+
+
+/* LEFT ARROW */
+
+.foryou-banner-prev {
+    left: 12px;
+}
+
+
+/* RIGHT ARROW */
+
+.foryou-banner-next {
+    right: 12px;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.foryou-banner-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+
+.foryou-banner-dots button {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #c8c8c8;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.foryou-banner-dots button.active {
+    width: 24px;
+
+    border-radius: 10px;
+
+    background: #fb4802;
+}
+
+
+/* =========================================
+   1200px
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .foryou-banner-track {
+        grid-template-columns:
+            0.6fr 1.4fr 0.6fr;
+
+        gap: 14px;
+    }
+
+    .foryou-banner-card {
+        height: 250px;
+    }
+
+}
+
+
+/* =========================================
+   992px
+========================================= */
+
+@media (max-width: 992px) {
+
+    .foryou-banner-track {
+        grid-template-columns:
+            0.45fr 1.5fr 0.45fr;
+
+        gap: 10px;
+    }
+
+    .foryou-banner-card {
+        height: 220px;
+
+        border-radius: 14px;
+    }
+
+    .foryou-banner-arrow {
+        width: 45px;
+        height: 45px;
+
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================
+   768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .foryou-banner-track {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide side banners */
+
+    .foryou-banner-card.side-card {
+        display: none;
+    }
+
+    .foryou-banner-card.main-card {
+        width: 100%;
+
+        height: 230px;
+    }
+
+    .foryou-banner-prev {
+        left: 10px;
+    }
+
+    .foryou-banner-next {
+        right: 10px;
+    }
+
+}
+
+
+/* =========================================
+   480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .foryou-banner-card.main-card {
+        height: 180px;
+
+        border-radius: 10px;
+    }
+
+    .foryou-banner-arrow {
+        width: 35px;
+        height: 35px;
+
+        font-size: 13px;
+    }
+
+    .foryou-banner-dots {
+        margin-top: 10px;
+    }
+
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.foryou-product-section,
+.foryou-category-section {
+    width: 100%;
+
+    margin: 0 auto 30px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.foryou-section-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.foryou-section-header h2 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #011f53;
+}
+
+.foryou-section-header p {
+    margin: 4px 0 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* View All */
+
+.foryou-view-all {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #fb4802;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.foryou-view-all:hover {
+    color: #D93D00;
+}
+
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.foryou-products-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.foryou-product-card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+    box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.08);
+
+
+}
+
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.foryou-product-image {
+    display: block;
+
+    width: 100%;
+    height: 230px;
+
+  
+
+    overflow: hidden;
+}
+
+.foryou-product-image img {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+
+    padding: 10px;
+}
+
+/* =========================================
+   DISCOUNT
+========================================= */
+.product-discount {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: #fa4702;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   WISHLIST BUTTON
+========================================= */
+
+.foryou-wishlist-btn {
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #012055;
+    font-size: 19px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.foryou-wishlist-btn.active {
+    color: #e63946;
+}
+
+.foryou-wishlist-btn.active .active-heart {
+    color: #e63946;
+    animation: heartPop 0.25s ease;
+}
+
+
+
+@keyframes heartPop {
+    0% {
+        transform: scale(0.7);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.foryou-wishlist-btn:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+    transform: none;
+}
+
+.foryou-wishlist-btn:disabled i {
+    animation: heartLoading 0.8s ease-in-out infinite;
+}
+
+
+
+
+
+.foryou-product-content {
+    padding: 13px;
+}
+
+.foryou-product-brand {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.foryou-product-content h3 {
+    margin: 0 0 7px;
+
+    color: #011f54;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+.foryou-rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 6px;
+}
+
+.foryou-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.foryou-stars svg {
+    font-size: 13px;
+    color: #f5a623;
+}
+
+.foryou-rating small {
+    font-size: 12px;
+    color: #777;
+    font-weight: 500;
+}
+.foryou-price {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+}
+
+.foryou-price strong {
+    color: #021f51;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+.foryou-price del {
+    color: #999;
+
+    font-size: 12px;
+}
+
+.foryou-cart-btn {
+    width: 100%;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+    background: #FB4802;
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    transition: 0.2s ease;
+}
+
+.foryou-cart-btn:hover {
+    background: #D93D00;
+
+    color: white;
+}
+.foryou-cart-btn .bi-cart3{
+
+    -webkit-text-stroke: 0.2px currentColor;
+}
+
+.out-of-stock-btn {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    cursor: not-allowed !important;
+    opacity: 0.8;
+}
+
+.out-of-stock-btn:hover {
+    background: #e5e7eb !important;
+    color: #9ca3af !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+/* =========================================
+   RESPONSIVE - 1200px
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .foryou-products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+   
+
+    .foryou-slider {
+        height: 280px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - 992px
+========================================= */
+
+@media (max-width: 992px) {
+
+    .foryou-page {
+        padding: 18px 20px 40px;
+    }
+
+    .foryou-products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    
+
+    .foryou-slider {
+        height: 240px;
+    }
+
+    .foryou-product-image {
+        height: 210px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .foryou-page {
+        padding: 14px 14px 35px;
+    }
+
+    .foryou-slider {
+        height: 210px;
+
+        border-radius: 10px;
+    }
+
+    .foryou-slider-overlay {
+        padding: 25px;
+    }
+
+    .foryou-slider-content h1 {
+        font-size: 28px;
+    }
+
+    .foryou-slider-content p {
+        font-size: 14px;
+    }
+
+    .foryou-slider-arrow {
+        width: 35px;
+        height: 35px;
+
+        font-size: 14px;
+    }
+
+    .foryou-slider-arrow.left {
+        left: 10px;
+    }
+
+    .foryou-slider-arrow.right {
+        right: 10px;
+    }
+
+    .foryou-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .foryou-product-image {
+        height: 200px;
+    }
+
+
+    .foryou-section-header h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .foryou-wishlist-btn {
+        top: 10px;
+        right: 10px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+    }
+}
+/* =========================================
+   RESPONSIVE - 480px
+========================================= */
+@media (max-width: 480px) {
+
+    .foryou-page {
+        padding: 10px 10px 30px;
+    }
+
+    .foryou-slider {
+        height: 180px;
+
+        border-radius: 8px;
+    }
+
+    .foryou-slider-overlay {
+        padding: 18px;
+    }
+
+    .foryou-slider-content span {
+        font-size: 9px;
+    }
+
+    .foryou-slider-content h1 {
+        font-size: 21px;
+    }
+
+    .foryou-slider-content p {
+        font-size: 11px;
+
+        margin-bottom: 10px;
+    }
+
+    .foryou-slider-content a {
+        padding: 8px 13px;
+
+        font-size: 11px;
+    }
+
+    .foryou-slider-arrow {
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+    .foryou-product-image {
+        height: 160px;
+    }
+
+    .foryou-product-content {
+        padding: 9px;
+    }
+
+    .foryou-product-content h3 {
+        font-size: 13px;
+    }
+
+    .foryou-price strong {
+        font-size: 15px;
+    }
+
+    .foryou-price del {
+        font-size: 10px;
+    }
+
+    .foryou-cart-btn {
+        height: 34px;
+
+        font-size: 12px;
+    }
+
+    
+}
+
+
+/* =========================================
+   RESPONSIVE - 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .foryou-slider {
+        height: 150px;
+    }
+
+    .foryou-slider-content h1 {
+        font-size: 18px;
+    }
+
+    .foryou-product-image {
+        height: 145px;
+    }
+
+    .foryou-product-content h3 {
+        font-size: 12px;
+    }
+
+    .foryou-price strong {
+        font-size: 14px;
+    }
+
+    .foryou-cart-btn {
+        font-size: 11px;
+    }
+}

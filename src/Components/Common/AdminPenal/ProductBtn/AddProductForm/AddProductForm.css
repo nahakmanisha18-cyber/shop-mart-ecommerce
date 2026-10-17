@@ -1,0 +1,715 @@
+.add-product-page {
+    padding: 30px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+/* =================================
+   FULL SCREEN PRODUCT LOADER
+================================= */
+
+.add-product-loading-overlay {
+    position: fixed;
+        inset: 0;
+        z-index: 99999;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        background: rgba(255, 255, 255, 0.45);
+    
+        /* Background blur */
+        backdrop-filter: blur(7px) !important;
+        -webkit-backdrop-filter: blur(7px) ;
+}
+
+
+/* Circular Loader */
+
+.product-loader {
+    width: 55px;
+        height: 55px;
+    
+        border: 5px solid #dbe4f0;
+        border-top: 5px solid #fa4602;
+    
+        border-radius: 50%;
+    
+        animation: productSpin 0.8s linear infinite;
+}
+
+
+/* Loading Text */
+
+.product-loading-overlay p {
+    margin-top: 15px;
+    
+        font-size: 16px;
+        font-weight: 500;
+    
+        color: #334155;
+}
+
+
+/* Animation */
+
+@keyframes productSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* ================= HEADER ================= */
+
+.add-product-header {
+    margin-bottom: 25px;
+}
+
+.add-product-header h1 {
+    margin: 15px 0 5px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.add-product-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.back-products-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #fa4602;
+        background: #fdf0eb;
+    
+        border: 1px solid #fbe1d7;
+
+    transition: all 0.25s ease;
+}
+
+.back-products-btn:hover {
+    color: #ffffff;
+    background: #fa4602;
+    border-color: #fa4602;
+}
+
+/* ================= CARD ================= */
+
+.product-form-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 25px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.form-card-header {
+    margin-bottom: 22px;
+}
+
+.form-card-header h3 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.form-card-header p {
+    margin: 0;
+
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ================= FORM GRID ================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-group label span {
+    color: #ef4444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    padding: 12px 14px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #fff;
+
+    transition: 0.2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #fa4602;
+
+    box-shadow:
+            0 0 0 3px rgba(250, 70, 2, 0.12),
+            0 4px 12px rgba(250, 70, 2, 0.08);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+}
+/* ============================= */
+/* Category Dropdown */
+/* ============================= */
+
+.form-group select {
+    width: 100%;
+    height: 48px;
+    padding: 0 42px 0 15px;
+
+    border: 1px solid #d8dee9;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #1e293b;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    outline: none;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    /* Custom Arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+
+/* Hover */
+
+.form-group select:hover {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+}
+
+
+/* Focus */
+
+.form-group select:focus {
+    border-color: #fa4602;
+    
+        box-shadow:
+            0 0 0 3px rgba(250, 70, 2, 0.12),
+            0 4px 12px rgba(250, 70, 2, 0.08);
+}
+
+
+/* Option */
+
+.form-group select option {
+    padding: 12px;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+}
+
+
+/* Placeholder option */
+
+.form-group select option[value=""] {
+    color: #94a3b8;
+}
+/* =========================================
+   PRODUCT STATUS SELECT
+========================================= */
+
+.status-select {
+    width: 160px;
+    height: 46px;
+
+    padding: 0 42px 0 14px;
+
+    border: 1px solid #d8dee9;
+    border-radius: 10px;
+
+    outline: none;
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #ffffff;
+
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+
+    transition: all 0.25s ease;
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
+.status-select.active {
+    color: #15803d;
+
+    background-color: #f0fdf4;
+
+    border-color: #bbf7d0;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2315803d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================
+   INACTIVE
+========================================= */
+
+.status-select.inactive {
+    color: #64748b;
+
+    background-color: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.status-select.active:hover {
+    background-color: #dcfce7;
+
+    border-color: #86efac;
+}
+
+.status-select.inactive:hover {
+    background-color: #f1f5f9;
+
+    border-color: #94a3b8;
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.status-select:focus {
+    box-shadow:
+            0 0 0 3px rgba(250, 70, 2, 0.12),
+            0 4px 12px rgba(250, 70, 2, 0.08);
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.status-select option {
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 10px;
+}
+
+
+/* ============================= */
+/* Label */
+/* ============================= */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+/* Required Error */
+
+.form-group .error {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #ef4444;
+}
+
+
+/* ============================= */
+/* Error State */
+/* ============================= */
+
+.form-group select:has(option:checked[value=""]) {
+    color: #94a3b8;
+}
+
+/* ================= IMAGE UPLOAD ================= */
+
+.image-upload-box {
+    border: 2px dashed #d1d5db;
+
+    border-radius: 12px;
+
+    min-height: 180px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+.image-upload-box:hover {
+    border-color: #fa4602;
+    
+        background: #f9f2ef;
+}
+
+.image-upload-label {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #6b7280;
+}
+
+.image-upload-label svg {
+    font-size: 38px;
+    color: #fa4602;
+}
+
+.image-upload-label strong {
+    color: #374151;
+}
+
+.image-upload-label span {
+    font-size: 12px;
+}
+
+
+/* ================= IMAGE PREVIEW ================= */
+
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.image-preview {
+    width: 120px;
+    height: 120px;
+
+    position: relative;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.image-preview button {
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ef4444;
+    color: #fff;
+
+    cursor: pointer;
+}
+
+
+/* ================= SETTINGS ================= */
+
+.settings-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+}
+
+.settings-row strong {
+    color: #111827;
+}
+
+.settings-row p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.settings-row select {
+    padding: 9px 30px 9px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    outline: none;
+}
+
+
+/* ================= SWITCH ================= */
+
+.switch {
+    position: relative;
+
+    width: 48px;
+    height: 25px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    background: #d1d5db;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+    background: #fa4602;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(23px);
+}
+
+
+/* ================= ACTIONS ================= */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.cancel-btn,
+.add-product-submit {
+    height: 45px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.cancel-btn {
+    color: #374151;
+
+    background: #fff;
+
+    border: 1px solid #d1d5db;
+}
+
+.add-product-submit {
+    border: none;
+
+    color: white;
+
+    background: #fa4602;
+}
+
+.add-product-submit:hover {
+    background: #D93D00;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .add-product-page {
+        padding: 20px 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .product-form-card {
+        padding: 18px;
+    }
+
+    .settings-row {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .add-product-header h1 {
+        font-size: 24px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-btn,
+    .add-product-submit {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,301 @@
+/* =========================================
+   SEARCH CONTAINER
+========================================= */
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    transition: all 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+.search-box:focus-within {
+    border-color: #FB4802;
+
+    box-shadow:
+        0 0 0 3px rgba(251, 72, 2, 0.12);
+}
+
+/* =========================================
+   SEARCH ICON
+========================================= */
+
+.search-box svg {
+    flex-shrink: 0;
+
+    color: #022052;
+
+    font-size: 20px;
+
+    margin-right: 12px;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+    color: #222;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+
+/* =========================================
+   SEARCH RESULTS
+========================================= */
+
+.search-results {
+    position: absolute;
+
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid #eeeeee;
+
+    overflow: hidden;
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    z-index: 99999;
+}
+
+
+/* Hide scrollbar */
+
+.search-results {
+    scrollbar-width: none;
+}
+
+.search-results::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================
+   RESULT ITEM
+========================================= */
+
+.search-result-item {
+    width: 100%;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 10px 18px;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    color: #333;
+
+    border-bottom: 1px solid #f2f2f2;
+
+    transition: background 0.2s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: #f7f9fc;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.search-result-item img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #f5f5f5;
+}
+
+
+/* =========================================
+   RESULT INFO
+========================================= */
+
+.search-result-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.search-result-info h4 {
+    margin: 0;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: rgb(2 32 83);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.search-result-info span {
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    color: #FB4802;
+}
+
+
+/* =========================================
+   NO RESULT
+========================================= */
+
+.search-no-result {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .search-box {
+        height: 48px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .search-container {
+        width: 100%;
+    }
+
+    .search-box {
+        height: 44px;
+
+        padding: 0 13px;
+
+        border-radius: 10px;
+    }
+
+    .search-box svg {
+        font-size: 17px;
+
+        margin-right: 9px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+    }
+
+    .search-results {
+        border-radius: 12px;
+
+        max-height: 420px;
+    }
+
+    .search-result-item {
+        min-height: 65px;
+
+        padding: 8px 12px;
+
+        gap: 10px;
+    }
+
+    .search-result-item img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .search-result-info h4 {
+        font-size: 14px;
+    }
+
+    .search-result-info span {
+        font-size: 12px;
+    }
+
+}

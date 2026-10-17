@@ -1,0 +1,1139 @@
+/* =========================================
+   UPDATE PRODUCT PAGE
+========================================= */
+
+.update-product-page {
+    padding: 30px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   FULL SCREEN LOADING OVERLAY
+========================================= */
+
+.update-product-loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+
+/* =========================================
+   CIRCULAR LOADER
+========================================= */
+
+.update-product-loader {
+    width: 55px;
+    height: 55px;
+
+    border: 5px solid #dbe4f0;
+    border-top: 5px solid #fa4602;
+
+    border-radius: 50%;
+
+    animation: updateProductSpin 0.8s linear infinite;
+}
+
+
+.update-product-loading-overlay p {
+    margin-top: 15px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #334155;
+}
+
+
+@keyframes updateProductSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.update-product-header {
+    margin-bottom: 25px;
+}
+
+
+.update-product-header h1 {
+    margin: 15px 0 5px;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #032051;
+}
+
+
+.update-product-header p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.update-back-products-btn {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #fa4602;
+
+
+    background: #fdf0eb;
+    border: 1px solid #fbe1d7;
+
+    transition: all 0.25s ease;
+}
+
+
+.update-back-products-btn:hover {
+
+    color: #ffffff;
+
+    background: #fa4602;
+
+    border-color: #fa4602;
+
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.update-product-form-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.update-form-card-header {
+
+    margin-bottom: 22px;
+
+}
+
+
+.update-form-card-header h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #032051;
+
+}
+
+
+.update-form-card-header p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.update-form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.update-full-width {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.update-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.update-form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+
+.update-form-group label span {
+
+    color: #ef4444;
+
+}
+
+
+/* =========================================
+   INPUT / SELECT / TEXTAREA
+========================================= */
+
+.update-form-group input,
+.update-form-group select,
+.update-form-group textarea {
+
+    width: 100%;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 12px 14px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.update-form-group textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.update-form-group input:focus,
+.update-form-group textarea:focus {
+
+    border-color: #fa4602;
+
+    box-shadow:
+        0 0 0 3px rgba(250, 70, 2, 0.12),
+        0 4px 12px rgba(250, 70, 2, 0.08);
+
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.update-form-group input::placeholder,
+.update-form-group textarea::placeholder {
+
+    color: #94a3b8;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================
+   CATEGORY DROPDOWN
+========================================= */
+
+.update-form-group select {
+
+    height: 48px;
+
+    padding:
+        0 42px 0 15px;
+
+    border: 1px solid #d8dee9;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        right 15px center;
+
+    background-size: 16px;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.update-form-group select:hover {
+
+    border-color: #94a3b8;
+
+    background-color: #f8fafc;
+
+}
+
+
+.update-form-group select:focus {
+
+    border-color: #fa4602;
+
+    box-shadow:
+        0 0 0 3px rgba(250, 70, 2, 0.12),
+        0 4px 12px rgba(250, 70, 2, 0.08);
+
+    background-color: #ffffff;
+
+}
+
+
+.update-form-group select option {
+
+    padding: 12px;
+
+    font-size: 14px;
+
+    color: #1e293b;
+
+    background: #ffffff;
+
+}
+
+
+.update-form-group select option[value=""] {
+
+    color: #94a3b8;
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.update-error {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #ef4444;
+
+}
+
+
+/* =========================================
+   PRODUCT IMAGE UPLOAD
+========================================= */
+
+.update-image-upload-box {
+
+    border: 2px dashed #d1d5db;
+
+    border-radius: 12px;
+
+    min-height: 180px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.update-image-upload-box:hover {
+
+    border-color: #fa4602;
+
+    background: #f9f2ef;
+
+}
+
+
+/* =========================================
+   UPLOAD LABEL
+========================================= */
+
+.update-image-upload-label {
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #6b7280;
+
+}
+
+
+.update-image-upload-label svg {
+
+    font-size: 38px;
+
+    color: #fa4602;
+
+}
+
+
+.update-image-upload-label strong {
+
+    color: #374151;
+
+    font-size: 14px;
+
+}
+
+
+.update-image-upload-label span {
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+}
+
+
+/* =========================================
+   IMAGE PREVIEW CONTAINER
+========================================= */
+
+.update-image-preview-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+========================================= */
+
+.update-image-preview {
+
+    width: 120px;
+
+    height: 120px;
+
+    position: relative;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    background: #f8fafc;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+
+}
+
+
+.update-image-preview img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   IMAGE DELETE BUTTON
+========================================= */
+
+.update-image-preview button {
+
+    position: absolute;
+
+    top: 7px;
+
+    right: 7px;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ef4444;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.update-image-preview button:hover {
+
+    background: #dc2626;
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================
+   PRODUCT SETTINGS
+========================================= */
+
+.update-settings-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.update-settings-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.update-settings-row strong {
+
+    color: #032051;
+
+    font-size: 15px;
+
+}
+
+
+.update-settings-row p {
+
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   STATUS SELECT
+========================================= */
+
+.update-status-select {
+
+    width: 160px;
+
+    height: 46px;
+
+    padding: 0 42px 0 14px;
+
+    border: 1px solid #d8dee9;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    background-repeat: no-repeat;
+
+    background-position:
+        right 14px center;
+
+    background-size: 16px;
+
+    transition: all 0.25s ease;
+
+}
+
+
+/* =========================================
+   ACTIVE STATUS
+========================================= */
+
+.update-status-select.active {
+
+    color: #15803d;
+
+    background-color: #f0fdf4;
+
+    border-color: #bbf7d0;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2315803d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+}
+
+
+.update-status-select.active:hover {
+
+    background-color: #dcfce7;
+
+    border-color: #86efac;
+
+}
+
+
+/* =========================================
+   INACTIVE STATUS
+========================================= */
+
+.update-status-select.inactive {
+
+    color: #64748b;
+
+    background-color: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+}
+
+
+.update-status-select.inactive:hover {
+
+    background-color: #f1f5f9;
+
+    border-color: #94a3b8;
+
+}
+
+
+.update-status-select:focus {
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+
+}
+
+
+/* =========================================
+   STATUS OPTIONS
+========================================= */
+
+.update-status-select option {
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================
+   FEATURED SWITCH
+========================================= */
+
+.update-switch {
+
+    position: relative;
+
+    width: 48px;
+
+    height: 25px;
+
+    flex-shrink: 0;
+
+}
+
+
+.update-switch input {
+
+    display: none;
+
+}
+
+
+.update-slider {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #d1d5db;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.update-slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 19px;
+
+    height: 19px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.update-switch input:checked+.update-slider {
+
+    background: #fa4602;
+
+}
+
+
+.update-switch input:checked+.update-slider::before {
+
+    transform: translateX(23px);
+
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.update-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+.update-cancel-btn,
+.update-product-submit {
+
+    height: 45px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+
+}
+
+
+/* =========================================
+   CANCEL
+========================================= */
+
+.update-cancel-btn {
+
+    color: #374151;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+}
+
+
+.update-cancel-btn:hover {
+
+    background: #f8fafc;
+
+    border-color: #94a3b8;
+
+}
+
+
+/* =========================================
+   UPDATE BUTTON
+========================================= */
+
+.update-product-submit {
+
+    border: none;
+
+    color: #ffffff;
+
+    background: #fa4602;
+
+}
+
+
+.update-product-submit:hover {
+    background: #D93D00;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(217, 61, 0, 0.20);
+}
+
+.update-product-submit:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================
+   ERROR PAGE
+========================================= */
+
+.update-product-error {
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    color: #ef4444;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .update-product-page {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .update-form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .update-full-width {
+
+        grid-column: auto;
+
+    }
+
+
+    .update-product-form-card {
+
+        padding: 18px;
+
+    }
+
+
+    .update-settings-row {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .update-status-select {
+
+        width: 145px;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .update-product-page {
+
+        padding: 15px 10px;
+
+    }
+
+
+    .update-product-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .update-product-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .update-product-form-card {
+
+        padding: 16px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .update-form-card-header h3 {
+
+        font-size: 17px;
+
+    }
+
+
+    .update-form-card-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .update-form-grid {
+
+        gap: 16px;
+
+    }
+
+
+    .update-settings-row {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .update-status-select {
+
+        width: 100%;
+
+    }
+
+
+    .update-form-actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+
+    .update-cancel-btn,
+    .update-product-submit {
+
+        width: 100%;
+
+    }
+
+
+    .update-image-preview {
+
+        width: 100px;
+
+        height: 100px;
+
+    }
+
+}

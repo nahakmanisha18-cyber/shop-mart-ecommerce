@@ -1,0 +1,629 @@
+/* ==========================
+   Edit Profile Page
+========================== */
+
+.edit-profile-container {
+    max-width: 950px;
+    margin: 40px auto;
+}
+
+
+/* ==========================
+   Profile Card
+========================== */
+
+.edit-profile-card {
+    border: none;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================
+   Card Body
+========================== */
+
+.edit-profile-card .card-body {
+    padding: 35px;
+}
+
+
+/* ==========================
+   Header
+========================== */
+
+.edit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 20px;
+}
+
+.edit-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 5px;
+}
+
+.edit-header p {
+    color: #777;
+    margin: 0;
+    font-size: 15px;
+}
+
+
+/* ==========================
+   Profile Image
+========================== */
+
+.edit-profile-image-box {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.edit-profile-image {
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid #fa4702;
+
+    box-shadow: 0 10px 25px rgba(250, 71, 2, 0.3);
+}
+
+
+/* ==========================
+   Change Photo Button
+========================== */
+
+.change-photo-btn {
+    margin-top: 18px;
+    border-radius: 30px;
+    padding: 10px 28px;
+    font-weight: 600;
+}
+
+
+/* ==========================
+   Orange Buttons
+========================== */
+
+.cp-btn {
+    background-color: #fa4702 !important;
+    border: none !important;
+    color: #fff !important;
+
+    padding: 8px 18px;
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    box-shadow: none !important;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Hover */
+
+.cp-btn:hover {
+    background-color: #d93d00 !important;
+    border-color: #d93d00 !important;
+    color: #fff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* Click / Focus */
+
+.cp-btn:focus,
+.cp-btn:focus-visible,
+.cp-btn:active,
+.cp-btn:active:focus {
+    background-color: #fa4702 !important;
+    border-color: #fa4702 !important;
+    color: #fff !important;
+
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+/* Disabled */
+
+.cp-btn:disabled,
+.cp-btn.disabled {
+    background-color: #fa4702 !important;
+    border-color: #fa4702 !important;
+    color: #fff !important;
+
+    opacity: 0.75;
+
+    box-shadow: none !important;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================
+   Section Title
+========================== */
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid #f1f1f1;
+}
+
+
+/* ==========================
+   Form
+========================== */
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+
+    margin-bottom: 8px;
+}
+
+
+.form-control,
+.form-select {
+    width: 100%;
+
+    height: 52px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    box-shadow: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Focus */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #fa4702;
+
+    box-shadow: 0 0 0 3px rgba(250, 71, 2, 0.12);
+}
+
+
+/* Textarea */
+
+textarea.form-control {
+    min-height: 110px;
+
+    resize: none;
+}
+
+
+/* ==========================
+   Bottom Buttons
+========================== */
+
+.edit-btn-group {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+}
+
+
+.cancel-btn {
+    border-radius: 30px;
+
+    padding: 10px 30px;
+
+    font-weight: 600;
+}
+
+
+.save-btn {
+    border-radius: 30px;
+
+    padding: 10px 35px;
+
+    font-weight: 600;
+
+    background: #fa4702;
+
+    border: none;
+}
+
+
+.save-btn:hover {
+    background: #d93d00;
+}
+
+
+/* ==========================
+   Large Tablet
+   992px
+========================== */
+
+@media (max-width: 992px) {
+
+    .edit-profile-card .card-body {
+        padding: 30px;
+    }
+
+    .edit-header h2 {
+        font-size: 28px;
+    }
+
+    .edit-profile-image {
+        width: 155px;
+        height: 155px;
+    }
+
+}
+
+
+/* ==========================
+   Tablet
+   768px
+========================== */
+
+@media (max-width: 768px) {
+
+    .edit-profile-container {
+        max-width: 100%;
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+
+    .edit-profile-card {
+        border-radius: 18px;
+    }
+
+
+    .edit-profile-card .card-body {
+        padding: 25px 20px;
+    }
+
+
+    /* Header */
+
+    .edit-header {
+        margin-bottom: 28px;
+        padding-bottom: 16px;
+    }
+
+
+    .edit-header h2 {
+        font-size: 25px;
+    }
+
+
+    .edit-header p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* Profile Image */
+
+    .edit-profile-image {
+        width: 135px;
+        height: 135px;
+
+        border-width: 4px;
+    }
+
+
+    /* Section */
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    /* Inputs */
+
+    .form-control,
+    .form-select {
+        height: 50px;
+    }
+
+
+    /* Bottom buttons */
+
+    .edit-btn-group {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .edit-btn-group button {
+        width: 100%;
+    }
+
+
+    .edit-profile-card {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ==========================
+   Mobile
+   576px
+========================== */
+
+@media (max-width: 576px) {
+
+    .edit-profile-container {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+
+    .edit-profile-card {
+        border-radius: 15px;
+    }
+
+
+    .edit-profile-card .card-body {
+        padding: 20px 15px;
+    }
+
+
+    /* Header */
+
+    .edit-header {
+        margin-bottom: 25px;
+    }
+
+
+    .edit-header h2 {
+        font-size: 22px;
+    }
+
+
+    .edit-header p {
+        font-size: 13px;
+    }
+
+
+    /* Profile Image */
+
+    .edit-profile-image {
+        width: 115px;
+        height: 115px;
+    }
+
+
+    /* Change Photo */
+
+    .cp-btn {
+        width: auto;
+
+        padding: 8px 16px;
+
+        font-size: 13px;
+    }
+
+
+    /* Section title */
+
+    .section-title {
+        font-size: 18px;
+
+        margin-bottom: 18px;
+
+        padding-bottom: 8px;
+    }
+
+
+    /* Form */
+
+    .form-label {
+        font-size: 14px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .form-control,
+    .form-select {
+        height: 47px;
+
+        font-size: 14px;
+
+        border-radius: 10px;
+    }
+
+
+    textarea.form-control {
+        min-height: 100px;
+    }
+
+
+    /* Bootstrap row spacing */
+
+    .row {
+        --bs-gutter-x: 12px;
+    }
+
+
+    /* Bottom buttons */
+
+    .text-end.mt-4 {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 25px !important;
+    }
+
+
+    .text-end.mt-4 button {
+        width: 100%;
+
+        margin: 0 !important;
+    }
+}
+
+
+/* ==========================
+   Small Mobile
+   400px
+========================== */
+
+@media (max-width: 400px) {
+
+    .edit-profile-container {
+        padding: 0 7px;
+        margin: 10px auto;
+    }
+
+
+    .edit-profile-card {
+        border-radius: 12px;
+    }
+
+
+    .edit-profile-card .card-body {
+        padding: 18px 12px;
+    }
+
+
+    /* Header */
+
+    .edit-header h2 {
+        font-size: 20px;
+    }
+
+
+    .edit-header p {
+        font-size: 12px;
+    }
+
+
+    /* Image */
+
+    .edit-profile-image {
+        width: 100px;
+        height: 100px;
+
+        border-width: 4px;
+    }
+
+
+    /* Buttons */
+
+    .cp-btn {
+        padding: 7px 14px;
+
+        font-size: 12px;
+    }
+
+
+    /* Section */
+
+    .section-title {
+        font-size: 17px;
+    }
+
+
+    /* Labels */
+
+    .form-label {
+        font-size: 13px;
+    }
+
+
+    /* Inputs */
+
+    .form-control,
+    .form-select {
+        height: 45px;
+
+        font-size: 13px;
+
+        border-radius: 9px;
+    }
+
+
+    textarea.form-control {
+        min-height: 90px;
+    }
+}
+
+
+/* ==========================
+   Extra Small
+   360px
+========================== */
+
+@media (max-width: 360px) {
+
+    .edit-profile-container {
+        padding: 0 5px;
+    }
+
+
+    .edit-profile-card .card-body {
+        padding: 15px 10px;
+    }
+
+
+    .edit-header h2 {
+        font-size: 19px;
+    }
+
+
+    .edit-profile-image {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .section-title {
+        font-size: 16px;
+    }
+
+
+    .form-control,
+    .form-select {
+        height: 43px;
+
+        font-size: 12px;
+    }
+
+
+    .cp-btn {
+        font-size: 12px;
+
+        padding: 7px 12px;
+    }
+}
