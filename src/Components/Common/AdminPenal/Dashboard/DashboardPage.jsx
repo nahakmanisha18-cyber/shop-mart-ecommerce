@@ -21,6 +21,15 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     getDashboardData
 } from "@/redux/action/adminAction";
+import {
+    CartesianGrid,
+    ComposedChart,
+    Line,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from "recharts";
 
 import "./DashboardPage.css";
 import Loading from "../../Loding/Loading";
@@ -43,6 +52,12 @@ const DashboardPage = () => {
         new Date().toISOString().split("T")[0]
     );
 
+    const currentDate = new Intl.DateTimeFormat("en-IN", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+    }).format(new Date());
+
 
     // =========================
     // DASHBOARD DATA
@@ -62,28 +77,16 @@ const DashboardPage = () => {
     // FILTER 7 DAYS SALES
     // =========================
 
-    const selectedStartDate = new Date(`${selectedDate}T00:00:00`);
-
-    const filteredSales = Array.from({ length: 7 }, (_, index) => {
-        const date = new Date(`${selectedDate}T00:00:00`);
-
-        date.setDate(date.getDate() + index);
-
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, "0");
-        const day = String(date.getDate()).padStart(2, "0");
-
-        const dateString = `${year}-${month}-${day}`;
-
-        const existingData = dashboardSalesOverview.find(
-            (item) => item.date === dateString
-        );
+    const filteredSales = (dashboardSalesOverview || []).map((item) => {
+        const date = new Date(`${item.date}T00:00:00+05:30`);
 
         return {
-            date: dateString,
-            revenue: existingData
-                ? Number(existingData.revenue) || 0
-                : 0,
+            date: item.date,
+            label: date.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "short",
+            }),
+            revenue: Number(item.revenue) || 0,
         };
     });
     // =========================
@@ -92,9 +95,9 @@ const DashboardPage = () => {
 
     useEffect(() => {
 
-        dispatch(getDashboardData());
+        dispatch(getDashboardData(selectedDate));
 
-    }, [dispatch]);
+    }, [dispatch, selectedDate]);
 
     if (isLoading) {
         return <Loading />;
@@ -186,7 +189,7 @@ const DashboardPage = () => {
 
                 <div className="dashboard-date">
                     <span>Today</span>
-                    <strong>August 11, 2026</strong>
+                    <strong>{currentDate}</strong>
                 </div>
             </div>
 
@@ -278,62 +281,62 @@ const DashboardPage = () => {
                     </div>
 
                     <div className="sales-chart">
-
-                        <div className="chart-y-axis">
-                            <span>₹{Math.round(maxRevenue)}</span>
-                            <span>₹{Math.round(maxRevenue * 0.8)}</span>
-                            <span>₹{Math.round(maxRevenue * 0.6)}</span>
-                            <span>₹{Math.round(maxRevenue * 0.4)}</span>
-                            <span>₹{Math.round(maxRevenue * 0.2)}</span>
-                            <span>₹0</span>
-                        </div>
-
-                        <div className="chart-area">
-
-                            <div className="chart-grid-line line-1"></div>
-                            <div className="chart-grid-line line-2"></div>
-                            <div className="chart-grid-line line-3"></div>
-                            <div className="chart-grid-line line-4"></div>
-                            <div className="chart-grid-line line-5"></div>
-                            <div className="chart-bars">
-
-                                {filteredSales.map((item) => {
-
-                                    const height =
-                                        (Number(item.revenue) / maxRevenue) * 100;
-
-                                    const date = new Date(`${item.date}T00:00:00`);
-
-                                    const day = date.toLocaleDateString(
-                                        "en-IN",
-                                        {
-                                            day: "2-digit",
-                                            month: "short",
-                                        }
-                                    );
-
-                                    return (
-                                        <div
-                                            className="bar-wrapper"
-                                            key={item.date}
-                                        >
-                                            <div
-                                                className="bar"
-                                                style={{
-                                                    height: `${height}%`,
-                                                }}
-                                                title={`₹${Number(item.revenue).toLocaleString("en-IN")}`}
-                                            ></div>
-
-                                            <span>{day}</span>
-                                        </div>
-                                    );
-                                })}
-
-                            </div>
-
-                        </div>
-
+                        <ResponsiveContainer width="100%" height="100%">
+                            <ComposedChart
+                                data={filteredSales}
+                                margin={{ top: 10, right: 15, left: 5, bottom: 5 }}
+                            >
+                                <CartesianGrid
+                                    stroke="#edf1f7"
+                                    strokeDasharray="4 4"
+                                    vertical={true}
+                                />
+                                <XAxis
+                                    dataKey="label"
+                                    tick={{ fill: "#94a3b8", fontSize: 11 }}
+                                    axisLine={true}
+                                    tickLine={true}
+                                    dy={10}
+                                />
+                                <YAxis
+                                    tick={{ fill: "#94a3b8", fontSize: 10 }}
+                                    axisLine={true}
+                                    tickLine={true}
+                                    width={58}
+                                    tickFormatter={(value) =>
+                                        `₹${value >= 1000
+                                            ? `${(value / 1000).toFixed(1)}k`
+                                            : value}`
+                                    }
+                                    domain={[0, "auto"]}
+                                />
+                                <Tooltip
+                                    cursor={{ stroke: "#fecaca", strokeDasharray: "4 4" }}
+                                    formatter={(value) => [
+                                        `₹${Number(value).toLocaleString("en-IN")}`,
+                                        "Revenue",
+                                    ]}
+                                    labelFormatter={(_, payload) =>
+                                        payload?.[0]?.payload?.date || ""
+                                    }
+                                    contentStyle={{
+                                        borderRadius: "10px",
+                                        border: "1px solid #e5e7eb",
+                                        fontSize: "12px",
+                                    }}
+                                />
+                                <Line
+                                    type="monotone"
+                                    dataKey="revenue"
+                                    name="Revenue"
+                                    stroke="#fa4602"
+                                    strokeWidth={3}
+                                    dot={{ r: 4, fill: "#ffffff", strokeWidth: 2 }}
+                                    activeDot={{ r: 7, fill: "#fa4602", stroke: "#ffffff", strokeWidth: 3 }}
+                                    connectNulls
+                                />
+                            </ComposedChart>
+                        </ResponsiveContainer>
                     </div>
 
                 </div>

@@ -6,7 +6,7 @@ import axios from "axios";
 export const getDashboardData = createAsyncThunk(
     "admin/getDashboardData",
 
-    async (_, { rejectWithValue }) => {
+    async (selectedDate, { rejectWithValue }) => {
         try {
             const token =
                 sessionStorage.getItem("TOKEN");
@@ -21,6 +21,9 @@ export const getDashboardData = createAsyncThunk(
             const response = await axios.get(
                 "/api/admin/dashboard",
                 {
+                    params: selectedDate
+                        ? { date: selectedDate }
+                        : undefined,
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

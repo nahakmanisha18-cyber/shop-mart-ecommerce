@@ -185,17 +185,22 @@ export async function GET(request) {
             .select("productName stock");
 
         // ==============================
-        // DAILY SALES - LAST 7 DAYS
+        // DAILY SALES - 10-DAY WINDOW
         // ==============================
 
-        const today = new Date();
+        const requestedDate = request.nextUrl.searchParams.get("date");
+        const dateIsValid =
+            /^\d{4}-\d{2}-\d{2}$/.test(requestedDate || "");
 
-        today.setHours(23, 59, 59, 999);
+        const selectedDate = dateIsValid
+            ? requestedDate
+            : new Date().toLocaleDateString("en-CA", {
+                timeZone: "Asia/Kolkata",
+            });
 
-        const sevenDaysAgo = new Date(today);
-
-        sevenDaysAgo.setDate(today.getDate() - 6);
-        sevenDaysAgo.setHours(0, 0, 0, 0);
+        const rangeEnd = new Date(`${selectedDate}T23:59:59.999+05:30`);
+        const rangeStart = new Date(`${selectedDate}T00:00:00.000+05:30`);
+        rangeStart.setDate(rangeStart.getDate() - 9);
 
         const salesResult = await Order.aggregate([
             {
@@ -203,8 +208,8 @@ export async function GET(request) {
                     paymentStatus: "paid",
                     orderStatus: { $ne: "cancelled" },
                     createdAt: {
-                        $gte: sevenDaysAgo,
-                        $lte: today,
+                        $gte: rangeStart,
+                        $lte: rangeEnd,
                     },
                 },
             },
@@ -237,11 +242,9 @@ export async function GET(request) {
 
         const salesOverview = [];
 
-        for (let i = 6; i >= 0; i--) {
-            const date = new Date();
-
+        for (let i = 9; i >= 0; i--) {
+            const date = new Date(`${selectedDate}T12:00:00+05:30`);
             date.setDate(date.getDate() - i);
-
             const dateString = date.toLocaleDateString("en-CA", {
                 timeZone: "Asia/Kolkata",
             });
